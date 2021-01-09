@@ -35,7 +35,7 @@ def build():
     layout = [
         [sg.Text('Webhook', size=(15, 1)), sg.Input(size=(40, 1), key="webhook")],
         [sg.Text('Name File', size=(15, 1)), sg.Input(size=(40, 1), key="name")],
-        [sg.Text('Icon', size=(15, 1)), sg.InputText(size=(40, 1), key="iconpath"), sg.FileBrowse(file_types=(("Icon Files", "*.ico"),("All Files", "*.*")), size=(6,1), key="iconbrowse")],
+        [sg.Text('Icon', size=(15, 1)), sg.InputText(size=(40, 1), key="iconpath"), sg.FileBrowse(button_text="Ouvrir", file_types=(("Icon Files", "*.ico"),("All Files", "*.*")), size=(6,1), key="iconbrowse")],
         [sg.Button("Make EXE", size=(10, 1))]
     ]
     window = sg.Window("Token Grabber Maker", layout=layout)
