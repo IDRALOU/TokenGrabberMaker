@@ -1,7 +1,0 @@
-pyarmor
-pyinstaller
-PySimpleGUI
-Pillow
-requests
-pycrypto
-dhooks
