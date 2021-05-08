@@ -10,4 +10,6 @@ Ce logiciel permet de créer des token grabber discord
 
 Le .exe généré est détecté par quelques antivirus. (Donc ce n'est pas indétectable)
 
+<h2>SALUT</h2>
+
 En cas de problème envoyez-moi un message sur Discord (IDRALOU#6966)
